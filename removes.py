@@ -19,3 +19,21 @@ def remove(data, target):
 
     # returns the data
     return data
+
+def removeHTMLTags(data):
+    # creates start and stop arrays
+    starts, stops = [], []
+    
+    # gets starts and stops of html tags
+    for i in range(len(data)):
+        if data[i] == "<":
+            starts.append(i)
+        elif data[i] == ">":
+            stops.append(i)
+
+    # performs the deletions
+    for start, stop in zip(starts, stops):
+        data = data[:start] + data[(stop + 1):]
+    
+    # returns the data
+    return data

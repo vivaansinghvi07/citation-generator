@@ -1,5 +1,6 @@
 import requests
 import removes
+import re
 
 # get the web url from the user
 url = input("Enter the URL here: ")
@@ -20,6 +21,9 @@ except:
 # removes the scripts and styles from the html source
 data = removes.remove(data, "script")
 data = removes.remove(data, "style")
+
+# removes excess whitespace
+data = re.sub("[\s\n]+ ", " ", data)
 
 # prints the data
 print(data)

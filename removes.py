@@ -8,3 +8,12 @@ def removeScripts(data):
         data = data[:start] + data[(stop + 9):]
 
     return data
+
+def removeStyles(data):
+    starts = [m.start() for m in re.finditer('<style', data)][::-1]
+    stops = [m.start() for m in re.finditer('</style', data)][::-1]
+
+    for start, stop in zip(starts, stops):
+        data = data[:start] + data[(stop + 8):]
+
+    return data

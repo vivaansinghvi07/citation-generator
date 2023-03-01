@@ -19,8 +19,11 @@ except:
     print("Data could not be retrived from this page!")
 
 # removes the scripts and styles from the html source
-data = removes.remove(data, "script")
-data = removes.remove(data, "style")
+data = removes.removeByTag(data, "script")
+data = removes.removeByTag(data, "style")
+
+# removes all HTML tags
+data = removes.removeHTMLTags(data)
 
 # removes excess whitespace
 data = re.sub(" +", " ", data)

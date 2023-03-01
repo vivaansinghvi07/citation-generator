@@ -31,6 +31,10 @@ def removeHTMLTags(data):
         elif data[i] == ">":
             stops.append(i)
 
+    # reverses arrays
+    starts = starts[::-1]
+    stops = stops[::-1]
+
     # performs the deletions
     for start, stop in zip(starts, stops):
         data = data[:start] + data[(stop + 1):]

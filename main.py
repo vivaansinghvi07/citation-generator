@@ -17,11 +17,11 @@ try:
 except:
     print("Data could not be retrived from this page!")
 
-ignore = False
-
+# removes the scripts and styles from the html source
 data = removes.removeScripts(data)
 data = removes.removeStyles(data)
 
+# prints the data
 print(data)
 
 

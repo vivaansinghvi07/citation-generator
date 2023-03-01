@@ -25,11 +25,17 @@ data = removes.removeByTag(data, "style")
 # removes all HTML tags
 data = removes.removeHTMLTags(data)
 
-# removes excess whitespace
-data = re.sub(" +", " ", data)
-data = re.sub("\n+", "\n", data)
+# removes whitespace
+data = re.sub("[\n \t]+", " ", data)
 
-# prints the data
-print(data)
+# splits the data by spaces
+words = data.split(" ")
 
+# gets the lengths
+character_count = len(data)
+word_count = len(words)
+
+# prints the length of the data
+print(f"Characters: {character_count}")
+print(f"Words: {word_count}")
 

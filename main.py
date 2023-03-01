@@ -18,8 +18,8 @@ except:
     print("Data could not be retrived from this page!")
 
 # removes the scripts and styles from the html source
-data = removes.removeScripts(data)
-data = removes.removeStyles(data)
+data = removes.remove(data, "script")
+data = removes.remove(data, "style")
 
 # prints the data
 print(data)

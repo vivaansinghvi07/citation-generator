@@ -5,7 +5,11 @@ import removes
 url = input("Enter the URL here: ")
 
 # gets the request
-r = requests.get(url)
+try:
+    r = requests.get(url)
+except:
+    print("Invalid URL!")
+    quit()
 
 # tries to get the data from the webpage
 try:

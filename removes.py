@@ -1,7 +1,7 @@
 import re
 
-# removes everything between html tags labeled "target"
-def remove(data, target):
+# removes everything between html tags labeled "target", including the tags themselves
+def removeByTag(data, target):
     # gets all occurences of "<target..." in the data
     starts = [m.start() for m in re.finditer('<' + target, data)][::-1]
 

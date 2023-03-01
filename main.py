@@ -23,7 +23,8 @@ data = removes.remove(data, "script")
 data = removes.remove(data, "style")
 
 # removes excess whitespace
-data = re.sub("[\s\n]+ ", " ", data)
+data = re.sub(" +", " ", data)
+data = re.sub("\n+", "\n", data)
 
 # prints the data
 print(data)

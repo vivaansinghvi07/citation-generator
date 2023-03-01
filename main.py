@@ -39,3 +39,7 @@ word_count = len(words)
 print(f"Characters: {character_count}")
 print(f"Words: {word_count}")
 
+# shows what was read if asked
+show_data = input("Would you like to see what was read? (y/n): ")
+if show_data in ['y', 'Y']:
+    print(data)
